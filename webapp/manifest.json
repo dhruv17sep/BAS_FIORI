@@ -1,0 +1,130 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "ovpcard",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "tags": {
+            "keywords": []
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/here/goes/your/serviceurl/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "annotation"
+                    ],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "annotation": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml",
+                "settings": {
+                    "localUri": "annotations/annotation.xml"
+                }
+            }
+        },
+        "offline": false,
+        "sourceTemplate": {
+            "id": "OVP.smartovptemplate",
+            "version": "1.41.1"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "resources": {
+            "js": [],
+            "css": []
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.0",
+            "libs": {
+                "sap.ovp": {}
+            },
+            "components": {}
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties",
+                "preload": false
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "mainService": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultCountMode": "Inline"
+                }
+            }
+        },
+        "extends": {
+            "extensions": {}
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "analytical"
+    },
+    "sap.ovp": {
+        "globalFilterModel": "mainService",
+        "globalFilterEntityType": "Average",
+        "containerLayout": "resizable",
+        "enableLiveFilter": true,
+        "considerAnalyticalParameters": false,
+        "cards": {
+            "RolesCard": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "RolesCard",
+                    "entitySet": "AverageSet",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#Roles_by_time",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Roles_by_time",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Roles_by_time",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#Roles_by_time"
+                }
+            }
+        },
+        "chartSettings": {
+            "showDataLabel": true
+        }
+    },
+    "sap.ui.generic.app": {
+        "settings": {}
+    }
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<edmx:Edmx xmlns:sap="http://www.sap.com/Protocols/SAPData" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+    
+    
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        
+        
+        <Schema xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" sap:schema-version="1" Namespace="Z_ROLE_REQ_SRV">
+            
+            
+            <EntityType sap:content-version="1" Name="Average">
+                
+                
+                <Key>
+                    
+                    <PropertyRef Name="RequestId"/>
+                    
+                </Key>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="RequestId" sap:label="Reques Id" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="fromDate" sap:label="From Date" sap:unicode="false" Type="Edm.DateTime" sap:sortable="false" Precision="0"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="toDate" sap:label="To Date" sap:unicode="false" Type="Edm.DateTime" sap:sortable="false" Precision="0"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="Requested" sap:label="Requested" sap:unicode="false" Type="Edm.Int32"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="Approved" sap:label="Approved" sap:unicode="false" Type="Edm.Int32"/>
+                
+            </EntityType>
+            
+            
+            <EntityType sap:content-version="1" Name="Role_Request">
+                
+                
+                <Key>
+                    
+                    <PropertyRef Name="RequestId"/>
+                    
+                </Key>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="RequestId" sap:label="Request-Id" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String" sap:sortable="false" sap:filterable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="Userid" sap:label="User Name" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String" sap:sortable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="Appli" sap:label="Destination" sap:unicode="false" MaxLength="32" Nullable="false" Type="Edm.String" sap:sortable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="RoleType" sap:label="Role Type" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String" sap:sortable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="RoleId" sap:label="RoleID" sap:unicode="false" MaxLength="6" Nullable="false" Type="Edm.String" sap:sortable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="GenericId" sap:label="Generic Id" sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String" sap:sortable="false" sap:filterable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="Status" sap:label="Status" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:sortable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="AprvUserid" sap:label="Approver" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String" sap:sortable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="AprvDate" sap:label="Approved Date" sap:unicode="false" Type="Edm.DateTime" sap:sortable="false" Precision="7" sap:filterable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="FlowitemId" sap:label="Workitem-Id" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String" sap:sortable="false" sap:filterable="false"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="ReqDate" sap:label="Request Date" sap:unicode="false" Type="Edm.DateTime" sap:sortable="false" Precision="7"/>
+                
+                <Property sap:updatable="false" sap:creatable="false" Name="ReqTime" sap:label="Request Time" sap:unicode="false" Nullable="false" Type="Edm.Time" sap:sortable="false" Precision="0" sap:filterable="false"/>
+                
+            </EntityType>
+            
+            
+            <EntityContainer Name="Z_ROLE_REQ_SRV_Entities" sap:supported-formats="atom json xlsx" m:IsDefaultEntityContainer="true">
+                
+                <EntitySet sap:content-version="1" sap:addressable="false" sap:pageable="false" sap:deletable="false" sap:updatable="false" sap:creatable="false" Name="AverageSet" EntityType="Z_ROLE_REQ_SRV.Average"/>
+                
+                <EntitySet sap:content-version="1" sap:pageable="false" sap:deletable="false" sap:updatable="false" sap:creatable="false" Name="Role_RequestSet" EntityType="Z_ROLE_REQ_SRV.Role_Request"/>
+                
+            </EntityContainer>
+            
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://OH1.CF.SIEMENS.DE:443/sap/opu/odata/sap/Z_ROLE_REQ_SRV/$metadata" rel="self"/>
+            
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://OH1.CF.SIEMENS.DE:443/sap/opu/odata/sap/Z_ROLE_REQ_SRV/$metadata" rel="latest-version"/>
+            
+        </Schema>
+        
+    </edmx:DataServices>
+    
+</edmx:Edmx>
